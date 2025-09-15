@@ -9,9 +9,11 @@ def reaction(message):
     answer += "Istalgan matn kiriting, matn lotincha bo'lsa kirilchaga, "
     answer += "kirilcha bo'lsa lotinchaga o'girib beraman."
     xabar = message.text
+    bot.reply_to(message, answer)
     if xabar.isascii():
         answer1 = to_cyrillic(xabar)
     else:
         answer1 = to_latin(xabar)
     bot.reply_to(message, answer1)
+
 bot.polling()
